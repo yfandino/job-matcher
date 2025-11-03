@@ -54,7 +54,9 @@ def parse_analysis(text: str) -> AnalysisResult:
     )
 
     # Extraer el puntaje
-    score_match = re.search(r"\*\*3\. Match Score:\*\*(.*?)\*\*4\.", text, re.DOTALL)
+    score_match = re.search(
+        r"\*\*3\. Match Score:\*\*(.*?)\*\*4\.", text, re.DOTALL | re.IGNORECASE
+    )
 
     # Extraer las observaciones
     analysis_match = re.search(
